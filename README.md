@@ -1,8 +1,8 @@
 # Download Reanalysis Data from ECMWF
-A collection of scripts to download reanalysis data  distributed by the 
+A collection of scripts to download reanalysis data distributed by the 
 European Centre for Medium-Range Weather Forecasts - ECMWF through:
 1. Meteorological Archival and Retrieval System (MARS) API.
-2. Climate Data Store API.
+2. Climate Data Store - Copernicus API.
 
 The MARS API can be used to access old generation of ECMWF public datasets like
 ERA-Interim. A complete list of the datasets available through this 
@@ -20,5 +20,5 @@ ECMWF Reanalysis v5 (ERA5).
 
  - *PyYaml*:full-featured YAML framework for the Python programming language.
            https://pyyaml.org
- -  - *numpy*: The fundamental package for scientific computing with Python
-           https://numpy.org
+ - *numpy*: The fundamental package for scientific computing with Python
+            https://numpy.org
