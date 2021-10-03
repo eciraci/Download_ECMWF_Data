@@ -25,8 +25,6 @@ ECMWF Reanalysis v5 (ERA5).
 
 
 **PYTHON DEPENDENCIES**:
- - *ecmwfapi*: enables you to programmatically request and retrieve data
-           via HTTP from the ECMWF data archive - https://www.ecmwf.int
  - `ecmwfapi: enables you to programmatically request and retrieve data via HTTP from the ECMWF data archive <https://www.ecmwf.int>`_
  - `cdsapi: Climate Data Store API <https://cds.climate.copernicus.eu>`_
  - `PyYaml: full-featured YAML framework for the Python programming language <https://pyyaml.org>`_
