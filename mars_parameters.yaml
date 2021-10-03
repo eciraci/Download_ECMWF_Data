@@ -1,0 +1,12 @@
+class: "ei"  # - ERA-Interim
+dataset: "interim"
+expver: "1"
+param: "167.128"      # - variable ECMWF code [total_precipitation]
+name: "total_precipitation"  # - variable Name
+grid: "0.75/0.75"     # - dataset resolution
+levtype: "sfc"        # - layer type - sfc = surface
+step: "12"            # - time step
+stream: "mnth"        # - temporal resolution
+time: "00:00:00/12:00:00"  # - time of the day
+type: "fc"            # - Analysis(an)/Forecast(fc)
+format: "netcdf"      # - format - netcdf/grib
