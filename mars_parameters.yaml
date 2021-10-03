@@ -1,4 +1,4 @@
-class: "ei"  # - ERA-Interim
+class: "ei"          # - ERA-Interim
 dataset: "interim"
 expver: "1"
 param: "167.128"      # - variable ECMWF code [total_precipitation]
