@@ -10,7 +10,7 @@ https://pypi.org/project/cdsapi/
 
 Install CDS AIP using pip: pip install cdsapi
 
-Data download requests can be sent programatically via our API.
+Data download requests can be sent programmatically via our API.
 However, a user ID and API key must be sent using HTTP basic authentication.
 To access ECMWF data Authentication through .cdsapirc id required.
 API Key and User ID mu be saved inside a text file named .cdsapirc and saved

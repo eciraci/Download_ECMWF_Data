@@ -180,12 +180,6 @@ def main():
     year_str = "19790101/19790201/19790301/19790401/19790501/19790601" \
                "/19790701/19790801/19790901/19791001/19791101/19791201"
 
-    # - Python dictionary containing the selected variables as keys
-    # - and the relative ECMWF variable code.
-    var_dict = {"total_precipitation": "228.128",
-                "2_metre_temperature": "167.128",
-                "evaporation": "182.128"}
-
     # - establish connection with ECMWF server
     server = ECMWFDataServer()
 

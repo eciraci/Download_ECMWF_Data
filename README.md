@@ -1,4 +1,4 @@
-# Download Climatic Data
+# Download Reanalysis Data from ECMWF
 A collection of scripts to download reanalysis data  distributed by the 
 European Centre for Medium-Range Weather Forecasts - ECMWF through:
 1. Meteorological Archival and Retrieval System (MARS) API.
