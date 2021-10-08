@@ -92,7 +92,7 @@ def main():
     # - Read the system arguments listed after the program
     parser = argparse.ArgumentParser(
         description="""se the Climate Data Store API to access the
-         ECMWF Reanalysis v5 (ERA5).
+         ECMWF Reanalysis v5 (ERA5) model's family.
         """
     )
     #
