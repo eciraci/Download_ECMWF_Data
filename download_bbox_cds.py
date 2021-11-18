@@ -36,6 +36,14 @@ NOTE: API request parameters are provided in the form of JSON document saved in
      -> csd_parameters.json
 
 COMMAND LINE OPTIONS:
+usage: download_bbox_cds.py [-h] [--path PATH] [--directory DIRECTORY]
+                            [--boundaries BOUNDARIES] [--name NAME]
+                            [--shapefile SHAPEFILE] [--jsonp JSONP]
+
+se the Climate Data Store API to access the ECMWF Reanalysis v5 (ERA5) model's
+family.
+
+optional arguments:
   -h, --help            show this help message and exit
   --path PATH, -P PATH  Absolute Output Path.
   --directory DIRECTORY, -D DIRECTORY
@@ -44,8 +52,10 @@ COMMAND LINE OPTIONS:
                         Domain BBOX - Lon Min,Lat Max,Lat Min,Lon Max
   --name NAME, -N NAME  Dataset Short Name
   --shapefile SHAPEFILE, -S SHAPEFILE
-                        Absolute path the the shapefile containing
-                        the boundaries of the Region of interest
+                        Absolute path the the shapefile containing the
+                        boundaries of the Region of interest
+  --jsonp JSONP, -J JSONP
+                        JSON parameter file name
 
 
 PYTHON DEPENDENCIES:
@@ -61,6 +71,7 @@ PYTHON DEPENDENCIES:
            https://docs.python.org/3/library/datetime.html
 
 UPDATE HISTORY:
+11/18/2021 - --jsonp JSONP, -J JSONP: SON parameter file name - Option Added.
 """
 # - - python dependencies
 from __future__ import print_function
@@ -112,6 +123,9 @@ def main():
                         help='Absolute path the the shapefile containing the'
                              ' boundaries of the Region of interest')
 
+    parser.add_argument('--jsonp', '-J', type=str, default='cds_parameters.json',
+                        help='JSON parameter file name')
+
     args = parser.parse_args()
 
     # -
@@ -120,6 +134,10 @@ def main():
         sys.exit()
     else:
         data_dir = create_dir(args.path, args.directory)
+
+    if not args.directory:
+        print('# - Provide Output Directory  name.')
+        sys.exit()
 
     if not args.name:
         print('# - Provide dataset short name.')
@@ -161,7 +179,7 @@ def main():
     c = cdsapi.Client()
 
     # - Import Request Parameters from cds_parameters.json
-    with open(os.path.join('.', 'cds_parameters.json'), 'r') as j_fid:
+    with open(os.path.join('.', args.jsonp), 'r') as j_fid:
         req = json.loads(j_fid.read())
     req['area'] = area
 
