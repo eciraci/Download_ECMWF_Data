@@ -50,6 +50,9 @@ optional arguments:
                         Output data directory name.
   --boundaries BOUNDARIES, -B BOUNDARIES
                         Domain BBOX - Lon Min,Lat Max,Lat Min,Lon Max
+  --buffer BUFFER, -F BUFFER
+                        Buffer to apply to the Domain BBOX in degrees.
+
   --name NAME, -N NAME  Dataset Short Name
   --shapefile SHAPEFILE, -S SHAPEFILE
                         Absolute path the the shapefile containing the
@@ -71,7 +74,9 @@ PYTHON DEPENDENCIES:
            https://docs.python.org/3/library/datetime.html
 
 UPDATE HISTORY:
-11/18/2021 - --jsonp JSONP, -J JSONP: SON parameter file name - Option Added.
+11/18/2021 -  Options Added:
+                --jsonp JSONP, -J JSONP: JSON parameter file name.
+                --buffer BUFFER, -F BUFFER: Buffer for Domain BBOX in degrees.
 """
 # - - python dependencies
 from __future__ import print_function
@@ -122,6 +127,9 @@ def main():
     parser.add_argument('--shapefile', '-S', type=str, default=None,
                         help='Absolute path the the shapefile containing the'
                              ' boundaries of the Region of interest')
+
+    parser.add_argument('--buffer', '-F', type=float, default=1.,
+                        help='Buffer to apply to the Domain BBOX in degrees.')
 
     parser.add_argument('--jsonp', '-J', type=str, default='cds_parameters.json',
                         help='JSON parameter file name')
