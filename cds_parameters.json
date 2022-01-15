@@ -1,7 +1,7 @@
 {
         "product_type": "monthly_averaged_reanalysis",
         "variable": [
-            "2m_temperature", "evaporation", "total_precipitation"
+            "2m_temperature", "evaporation", "total_precipitation",
         ],
         "year": [
             "1979", "1980", "1981",

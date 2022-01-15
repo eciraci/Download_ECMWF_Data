@@ -49,6 +49,10 @@ https://confluence.ecmwf.int/display/UDOC/MARS+user+documentation
 
 - List of the available dataset from ECMWF:
 - https://apps.ecmwf.int/datasets/
+- https://confluence.ecmwf.int/display/WEBAPI/Available+ECMWF+Public+Datasets
+
+- You can
+- https://apps.ecmwf.int/archive-catalogue
 
 COMMAND LINE OPTIONS:
 
@@ -56,6 +60,8 @@ COMMAND LINE OPTIONS:
   --path PATH, -P PATH  Absolute Output Path.
   --directory DIRECTORY, -D DIRECTORY
                         Output data directory name.
+  --var_name VAR_NAME, -V VAR_NAME
+                        Variable name
   --f_year F_YEAR, -F F_YEAR
                         First year of the considered period.
   --l_year L_YEAR, -L L_YEAR
@@ -119,6 +125,9 @@ def main():
 
     parser.add_argument('--directory', '-D', type=str, default=None,
                         help='Output data directory name.')
+
+    parser.add_argument('--var_name', '-V', type=str, default=None,
+                        help='Variable name.')
 
     parser.add_argument('--f_year', '-F', type=int, default=1979,
                         help='First year of the considered period.')
@@ -195,7 +204,7 @@ def main():
         # - update request dictionary
         req["date"] = date_seq_str
         req["target"] = os.path.join(data_dir,
-                                     req["name"] + '_' + str(year_d) + '.nc')
+                                     args.var_name + '_' + str(year_d) + '.nc')
         server.retrieve(req)
 
 
