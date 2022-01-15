@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 u"""
-download_bbox.py
+download_bbox_cds.py
 Written by Enrico Ciraci' (09/2021)
 
 Use the Climate Data Store API to access the ECMWF Reanalysis v5 (ERA5).
@@ -91,7 +91,7 @@ def create_dir(abs_path: str, dir_name: str) -> str:
 def main():
     # - Read the system arguments listed after the program
     parser = argparse.ArgumentParser(
-        description="""se the Climate Data Store API to access the
+        description="""Use the Climate Data Store API to access the
          ECMWF Reanalysis v5 (ERA5).
         """
     )

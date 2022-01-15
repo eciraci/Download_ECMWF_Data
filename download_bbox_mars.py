@@ -127,7 +127,7 @@ def main():
                         help='Last year of the considered period.')
 
     parser.add_argument('--boundaries', '-B', type=str, default=None,
-                        help='Domain BBOX - Lon Min,Lat Max,Lat Min,Lon Max')
+                        help='Domain BBOX - Lat Min,Lat Max,Lon Min,Lon Max')
 
     parser.add_argument('--shapefile', '-S', type=str, default=None,
                         help='Absolute path the the shapefile containing the'
