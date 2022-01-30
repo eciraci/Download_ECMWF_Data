@@ -68,3 +68,23 @@ jobs:
                   with open(m, "w") as f:
                       print('url: https://cds.climate.copernicus.eu/api/v2', file=f)
                       print('key:' + os.environ[n], file=f)
+
+      - name: generate test data request
+        shell: python
+        run: |
+          #!/usr/bin/env python
+          import cdsapi
+          c = cdsapi.Client()
+          c.retrieve("reanalysis-era5-pressure-levels",
+          {
+          "variable": "temperature",
+          "pressure_level": "1000",
+          "product_type": "reanalysis",
+          "year": "2008",
+          "month": "01",
+          "day": "01",
+          "time": "12:00",
+          "format": "netcdf",
+          "area": [55, 55, 5, 135]
+          }, "download.nc")
+ 
