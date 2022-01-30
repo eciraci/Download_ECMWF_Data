@@ -167,7 +167,7 @@ def main():
 
     today_date = datetime.today().strftime('%Y-%m-%d')
     c.retrieve(args.name, req,
-               os.path.join(data_dir, '{}_{}.nc'.format(args.name, today_date)))
+               os.path.join(data_dir, f'{args.name}_{today_date}.nc'))
 
 
 if __name__ == '__main__':
