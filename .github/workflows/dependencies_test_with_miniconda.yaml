@@ -1,4 +1,4 @@
-name: ci-with-mambaforge
+name: preliminary-ci-test-with-mambaforge
 
 on:
   push:
