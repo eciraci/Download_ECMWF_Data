@@ -1,0 +1,12 @@
+name: Download_ECMWF_Data
+channels:
+  - conda-forge
+dependencies:
+  - pip
+  - netCDF4
+  - xarray
+  - numpy
+  - pyyaml
+  - scipy
+  - pandas
+  - geopandas
