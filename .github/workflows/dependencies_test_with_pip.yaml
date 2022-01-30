@@ -31,3 +31,18 @@ jobs:
           pip install ecmwf-api-client
       - name: Display Python version
         run: python --version
+
+      - name: Add .cdsapirc to home directory
+        shell: python
+        env:
+          CDSAPIRC: ${{ secrets.CDSAPIRC }}
+
+        run: |
+          from __future__ import print_function
+          import os
+          for n in ('CDSAPIRC',):
+              m = os.path.expanduser("~/." + n.lower())
+              if os.environ[n]:
+                  with open(m, "w") as f:
+                      print('url: https://cds.climate.copernicus.eu/api/v2', file=f)
+                      print('key:' + os.environ[n], file=f)
