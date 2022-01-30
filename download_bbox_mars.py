@@ -90,10 +90,10 @@ from __future__ import print_function
 import os
 import sys
 import argparse
-from ecmwfapi import ECMWFDataServer
 import geopandas as gpd
 import numpy as np
 import yaml
+from ecmwfapi import ECMWFDataServer
 
 
 def create_dir(abs_path: str, dir_name: str) -> str:
@@ -113,9 +113,9 @@ def create_dir(abs_path: str, dir_name: str) -> str:
 def main():
     # - Read the system arguments listed after the program
     parser = argparse.ArgumentParser(
-        description="""Use the ECMWF Web API to access the Meteorological 
-        Archival and Retrieval System to access/download data from ECMWF's 
-        operational and other archives, including the online Fields Data Base 
+        description="""Use the ECMWF Web API to access the Meteorological
+        Archival and Retrieval System to access/download data from ECMWF's
+        operational and other archives, including the online Fields Data Base
         (FDB).
         """
     )
